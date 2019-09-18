@@ -1,0 +1,10 @@
+data "template_file" "s3_failobject_bucket_policy" {
+  template = "${file("${path.module}/files/ukiSearchServiceFailObjectRulesBucketPolicy.json")}"
+
+  vars = {
+    S3_bucket_arn        = "${module.failobject_s3_bucket.s3_arn}"
+	webstack_account_id  = "${lookup(var.webstack_account_id, terraform.workspace)}"
+	#iam_role_arn        = "${lookup(var.iam_role_arn, terraform.workspace)}"
+	iam_role_arn         = "${local.iam_role_arn}"
+  }
+}

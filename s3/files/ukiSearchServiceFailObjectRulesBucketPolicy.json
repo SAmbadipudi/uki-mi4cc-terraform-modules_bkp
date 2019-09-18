@@ -1,0 +1,25 @@
+{
+  "Id": "Policy1550741998414",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1550741996351",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectTagging",
+        "s3:ListBucket",
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:PutObjectTagging"
+      ],
+      "Effect": "Allow",
+      "Resource": ["${S3_bucket_arn}/*"
+		],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::320132909094:role/test_Lambda"
+        ]
+      }
+    }
+  ]
+}
