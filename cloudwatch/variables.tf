@@ -34,15 +34,7 @@ variable "cloudwatch_event_rule_name" {
   description = "Username for DB connectivity"
 }
 
-variable "cloudwatch_event_rule_name_for_sns" {
-  description = "Username for DB connectivity"
-}
-
 variable "cloudwatch_event_rule_description" {
-  description = "AWS Glue DB connection Name"
-}
-
-variable "cloudwatch_event_rule_description_for_sns" {
   description = "AWS Glue DB connection Name"
 }
 
